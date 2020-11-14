@@ -1,0 +1,17 @@
+C:\Users\danie\source\repos\Movieseek\Movieseek\bin\Debug\Movieseek.exe.config
+C:\Users\danie\source\repos\Movieseek\Movieseek\bin\Debug\Movieseek.exe
+C:\Users\danie\source\repos\Movieseek\Movieseek\bin\Debug\Movieseek.pdb
+C:\Users\danie\source\repos\Movieseek\Movieseek\obj\Debug\Movieseek.Movieseek.resources
+C:\Users\danie\source\repos\Movieseek\Movieseek\obj\Debug\Movieseek.Properties.Resources.resources
+C:\Users\danie\source\repos\Movieseek\Movieseek\obj\Debug\Movieseek.csproj.GenerateResource.cache
+C:\Users\danie\source\repos\Movieseek\Movieseek\obj\Debug\Movieseek.csproj.CoreCompileInputs.cache
+C:\Users\danie\source\repos\Movieseek\Movieseek\obj\Debug\Movieseek.exe
+C:\Users\danie\source\repos\Movieseek\Movieseek\obj\Debug\Movieseek.pdb
+C:\Users\danie\source\repos\Movieseek\Movieseek\bin\Debug\Newtonsoft.Json.dll
+C:\Users\danie\source\repos\Movieseek\Movieseek\bin\Debug\Newtonsoft.Json.xml
+C:\Users\danie\source\repos\Movieseek\Movieseek\obj\Debug\Movieseek.csproj.CopyComplete
+C:\Users\danie\source\repos\Movieseek\Movieseek\obj\Debug\Movieseek.csprojAssemblyReference.cache
+C:\Users\danie\source\repos\Movieseek\Movieseek\bin\Debug\Movieseek.exe.manifest
+C:\Users\danie\source\repos\Movieseek\Movieseek\bin\Debug\Movieseek.application
+C:\Users\danie\source\repos\Movieseek\Movieseek\obj\Debug\Movieseek.exe.manifest
+C:\Users\danie\source\repos\Movieseek\Movieseek\obj\Debug\Movieseek.application
