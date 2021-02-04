@@ -1,0 +1,16 @@
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\bin\Release\Movieseek.exe.config
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\bin\Release\Movieseek.exe.manifest
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\bin\Release\Movieseek.application
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\bin\Release\Movieseek.exe
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\bin\Release\Movieseek.pdb
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\bin\Release\Newtonsoft.Json.dll
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\bin\Release\Newtonsoft.Json.xml
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\obj\Release\Movieseek.Movieseek.resources
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\obj\Release\Movieseek.Properties.Resources.resources
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\obj\Release\Movieseek.csproj.GenerateResource.cache
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\obj\Release\Movieseek.csproj.CoreCompileInputs.cache
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\obj\Release\Movieseek.exe.manifest
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\obj\Release\Movieseek.application
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\obj\Release\Movieseek.csproj.CopyComplete
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\obj\Release\Movieseek.exe
+C:\Users\danie\development\movieseek\.git\movieseek\Movieseek\Movieseek\obj\Release\Movieseek.pdb

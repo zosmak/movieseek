@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MovieseekAPI</name>
+    </assembly>
+    <members>
+        <member name="M:MovieseekAPI.Controllers.MoviesController.GetAll">
+            <summary>
+            Gets all movies
+            </summary>
+            <returns>Movies</returns>
+        </member>
+    </members>
+</doc>

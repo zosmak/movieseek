@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Movieseek.exe" version="1.0.0.1" publicKeyToken="a20d6a9f44c33b35" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Movieseek" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Movieseek.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Movieseek.exe" size="23008">
+      <assemblyIdentity name="Movieseek" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ZB4o7syan0gAINnDKL8heHMbGlDQM8AbNTdIuTgFz/4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="700336">
+      <assemblyIdentity name="Newtonsoft.Json" version="12.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>f5ErKKB8Im4L46z7L1fwUFOKugEA+h8L8sOfGh8dqBQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Movieseek.exe.config" size="534">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>lx4E2pAq5hATy7F7vYWwPqbpIQszf4Gu1RIJ0OVODS4=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-R1F9LJK\danie" issuerKeyHash="69538b7468bdc8ada4ba1beeb23656b2cb5bc82e" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>cY5roXvj7p7Yeg4+i7q73C+NliqVCEOx3+OW0LT4+IA=</DigestValue></Reference></SignedInfo><SignatureValue>Y5oCComYQBXJB4k4sv4vaq4Rh9PDdvOnazj61iIiIZ3dluFz52KJVbcc7cKp/5ZAU0+PzHTTp/taslgPXWqcfYIo17TEvghjm8C27/vWv9Zjb6iKrSmC1PlpiHaCFuFsGAY8vk3YOKlQv2bUyzOGAveCr0y/vth2sVSCE5v5QTI=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>v219UH1csbzAtXTG4muiUiP4hXJmsKIfXAgHBrlB4eViVM7E4gX3Y3NkxOJuHZ9ENykIXeLpgcSlCuSwIF9Z/A0ZdcSNMeC14FkWaYIom1PN/KXsfoeLjG7vDtOm1SsqTJ4zQYsqK65sJ49Vck1TcsqWhNNZjrfziXjs7j2uuRE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="80f8f8b4d096e3dfb14308952a968d2fdcbbba8b3e0e7ad89eeee37ba16b8e71" Description="" Url=""><as:assemblyIdentity name="Movieseek.exe" version="1.0.0.1" publicKeyToken="a20d6a9f44c33b35" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-R1F9LJK\danie</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>96EjfidaMFSPqHD1uOpRL3B2637FEzTm1ExjHdWJz6E=</DigestValue></Reference></SignedInfo><SignatureValue>tgrl+2hM7kpf7eXQ9c0wnqsXu8H91jZpipvPvAlIU1JIAuPvzATMd/MS/yzsvWOQKn3Skbd58S3mgaekKhf4A7x47Jmz1SrINkcucxeiyeGaIeeAkvnBT6MgBe+SGMkeT3ZKJQpGB2chOcmWmQLptUgOdc5zjS355CMvVamUbno=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>v219UH1csbzAtXTG4muiUiP4hXJmsKIfXAgHBrlB4eViVM7E4gX3Y3NkxOJuHZ9ENykIXeLpgcSlCuSwIF9Z/A0ZdcSNMeC14FkWaYIom1PN/KXsfoeLjG7vDtOm1SsqTJ4zQYsqK65sJ49Vck1TcsqWhNNZjrfziXjs7j2uuRE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQFEV1EPjhNKVEmqC+zIHbFTANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAFIAMQBGADkATABKAEsAXABkAGEAbgBpAGUwHhcNMjAxMTE0MTQxNDU0WhcNMjExMTE0MjAxNDU0WjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAFIAMQBGADkATABKAEsAXABkAGEAbgBpAGUwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAL9tfVB9XLG8wLV0xuJrolIj+IVyZrCiH1wIBwa5QeHlYlTOxOIF92NzZMTibh2fRDcpCF3i6YHEpQrksCBfWfwNGXXEjTHgteBZFmmCKJtTzfyl7H6Hi4xu7w7TptUrKkyeM0GLKiuubCePVXJNU3LKloTTWY6384l47O49rrkRAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAUvSdedFc3V0bUre7m9pc1T7jtXOLHqoHmaGcslNfd6hB+Kvyr81aX71FumU6Lcv1JLYkFN+YwmNf8VlYfc5MfZAJEkY7DsXQ8/HDs5dmWrXEmF3TRCTZlUBEZXsF6OmmokVWEI5qLBBke7nNiNJxLJdNBOivAmHKtiZfcsJEWqA=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
