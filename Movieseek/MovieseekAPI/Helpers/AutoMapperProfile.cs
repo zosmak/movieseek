@@ -1,5 +1,7 @@
 using AutoMapper;
 using MovieseekAPI.Entities;
+using MovieseekAPI.Models.Movies;
+using MovieseekAPI.Models.Users;
 
 namespace MovieseekAPI.Helpers
 {
@@ -8,14 +10,14 @@ namespace MovieseekAPI.Helpers
         public AutoMapperProfile()
         {
             // user
-            CreateMap<User, Models.Users.UserModel>();
-            CreateMap<Models.Users.RegisterModel, User>();
-            CreateMap<Models.Users.UpdateModel, User>();
+            CreateMap<User, UserModel>();
+            CreateMap<RegisterUserModel, User>();
+            CreateMap<UpdateUserModel, User>();
 
             // movie
-            CreateMap<Movie, Models.Movies.MovieModel>();
-            CreateMap<Models.Movies.RegisterModel, Movie>();
-            CreateMap<Models.Movies.UpdateModel, Movie>();
+            CreateMap<Movie, MovieModel>();
+            CreateMap<RegisterMovieModel, Movie>();
+            CreateMap<UpdateMovieModel, Movie>();
         }
     }
 }

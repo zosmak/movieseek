@@ -1,6 +1,6 @@
 namespace MovieseekAPI.Models.Users
 {
-  public class UpdateModel
+  public class UpdateUserModel
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

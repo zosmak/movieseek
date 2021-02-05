@@ -4,11 +4,5 @@
         <name>MovieseekAPI</name>
     </assembly>
     <members>
-        <member name="M:MovieseekAPI.Controllers.MoviesController.GetAll">
-            <summary>
-            Gets all movies
-            </summary>
-            <returns>Movies</returns>
-        </member>
     </members>
 </doc>

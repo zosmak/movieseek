@@ -14,6 +14,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using System.IO;
+using Microsoft.Extensions.Hosting;
 
 namespace MovieseekAPI
 {
@@ -30,27 +31,24 @@ namespace MovieseekAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // use sql server db in production and sqlite db in development
             services.AddDbContext<DataContext>();
             services.AddCors();
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             // register the Swagger generator, defining 1 or more Swagger documents
-            services.AddSwaggerGen();
-
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new OpenApiInfo
-            //    {
-            //        Version = "v1",
-            //        Title = "Movieseek API",
-            //        Description = "Movieseek web requests",
-            //    });
-            //    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            //    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-            //    c.IncludeXmlComments(xmlPath);
-            //});
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Movieseek API",
+                    Description = "Movieseek web requests",
+                });
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
 
             // configure strongly typed settings objects
             var appSettingsSection = _configuration.GetSection("AppSettings");

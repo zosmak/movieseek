@@ -2,14 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MovieseekAPI.Models.Users
 {
-    public class RegisterModel
+    public class AuthenticateUserModel
     {
-        [Required]
-        public string FirstName { get; set; }
-
-        [Required]
-        public string LastName { get; set; }
-
         [Required]
         public string Username { get; set; }
 

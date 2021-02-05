@@ -1,6 +1,6 @@
 namespace MovieseekAPI.Models.Movies
 {
-  public class UpdateModel
+  public class UpdateMovieModel
     {
         public string Title { get; set; }
         public string Year { get; set; }

@@ -27,7 +27,8 @@ namespace MovieseekAPI.Controllers
         /// <summary>
         /// Gets all movies
         /// </summary>
-        /// <returns>Movies</returns>
+        /// <response code="201">Returns the movies</response>
+        /// <response code="401">Unauthorized</response>            
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -36,8 +37,32 @@ namespace MovieseekAPI.Controllers
             return Ok(model);
         }
 
+        /// <summary>
+        /// Get a movie by id
+        /// </summary>
+        /// <response code="200">Returns the movie</response>
+        /// <response code="401">Unauthorized</response>            
+        /// <response code="404">Movie wasn't found</response>            
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var movie = _movieService.GetById(id);
+            if(movie != null)
+            {
+                var model = _mapper.Map<MovieModel>(movie);
+                return Ok(model);
+            }
+            return NotFound();
+        }
+
+        /// <summary>
+        /// Creates a movie
+        /// </summary>
+        /// <response code="201">Returns the created movie</response>
+        /// <response code="400">Bad request</response>            
+        /// <response code="401">Unauthorized</response>            
         [HttpPost]
-        public IActionResult Register([FromBody] RegisterModel model)
+        public IActionResult Create([FromBody] RegisterMovieModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -52,7 +77,7 @@ namespace MovieseekAPI.Controllers
             {
                 // create user
                 _movieService.Create(movie);
-                return Ok();
+                return Created("movies", movie);
             }
             catch (AppException ex)
             {
@@ -61,16 +86,15 @@ namespace MovieseekAPI.Controllers
             }
         }
 
-        [HttpGet("{id}")]
-        public IActionResult GetById(int id)
-        {
-            var movie = _movieService.GetById(id);
-            var model = _mapper.Map<MovieModel>(movie);
-            return Ok(model);
-        }
-
+        /// <summary>
+        /// Updates a movie
+        /// </summary>
+        /// <response code="200">Returns the updated movie</response>
+        /// <response code="400">Bad request</response>            
+        /// <response code="401">Unauthorized</response>            
+        /// <response code="404">Movie wasn't found</response>            
         [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromBody] UpdateModel model)
+        public IActionResult Update(int id, [FromBody] UpdateMovieModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -86,20 +110,33 @@ namespace MovieseekAPI.Controllers
             {
                 // update movie 
                 _movieService.Update(movie);
-                return Ok();
+                var updatedMovie = _movieService.GetById(id);
+                return Ok(updatedMovie);
             }
             catch (AppException ex)
             {
                 // return error message if there was an exception
-                return BadRequest(new { message = ex.Message });
+                return NotFound(new { message = ex.Message });
             }
         }
 
+        /// <summary>
+        /// Deletes a movie
+        /// </summary>
+        /// <response code="204"></response>
+        /// <response code="401">Unauthorized</response>            
+        /// <response code="404">Movie wasn't found</response>            
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            _movieService.Delete(id);
-            return Ok();
+            var movie = _movieService.GetById(id);
+            if(movie != null)
+            {
+                _movieService.Delete(id);
+                return NoContent();
+            }
+
+            return NotFound();
         }
     }
 }

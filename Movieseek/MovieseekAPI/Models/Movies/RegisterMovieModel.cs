@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MovieseekAPI.Models.Movies
 {
-    public class RegisterModel
+    public class RegisterMovieModel
     {
         [Required]
         public string Title { get; set; }
