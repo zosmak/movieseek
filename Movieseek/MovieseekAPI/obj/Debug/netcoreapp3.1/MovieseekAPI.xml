@@ -70,7 +70,7 @@
             <summary>
             Creates a user
             </summary>
-            <response code="201">Returns the created user</response>
+            <response code="200">Returns the created user autenticated</response>
             <response code="400">Bad request</response>            
         </member>
         <member name="M:MovieseekAPI.Controllers.UsersController.Update(System.Int32,MovieseekAPI.Models.Users.UpdateUserModel)">

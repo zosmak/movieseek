@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using MovieseekAPI.Services;
 using MovieseekAPI.Entities;
 using MovieseekAPI.Models.Movies;
+using System;
 
 namespace MovieseekAPI.Controllers
 {
@@ -47,7 +48,7 @@ namespace MovieseekAPI.Controllers
         public IActionResult GetById(int id)
         {
             var movie = _movieService.GetById(id);
-            if(movie != null)
+            if (movie != null)
             {
                 var model = _mapper.Map<MovieModel>(movie);
                 return Ok(model);
@@ -75,9 +76,9 @@ namespace MovieseekAPI.Controllers
 
             try
             {
-                // create user
-                _movieService.Create(movie);
-                return Created("movies", movie);
+                // create movie
+                var savedMovie = _movieService.Create(movie);
+                return Ok(savedMovie);
             }
             catch (AppException ex)
             {
@@ -130,7 +131,7 @@ namespace MovieseekAPI.Controllers
         public IActionResult Delete(int id)
         {
             var movie = _movieService.GetById(id);
-            if(movie != null)
+            if (movie != null)
             {
                 _movieService.Delete(id);
                 return NoContent();

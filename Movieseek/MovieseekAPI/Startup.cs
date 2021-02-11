@@ -33,7 +33,11 @@ namespace MovieseekAPI
         {
             services.AddDbContext<DataContext>();
             services.AddCors();
-            services.AddControllers();
+            services.AddControllers()
+                .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             // register the Swagger generator, defining 1 or more Swagger documents

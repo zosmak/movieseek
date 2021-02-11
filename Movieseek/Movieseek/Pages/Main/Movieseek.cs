@@ -1,33 +1,28 @@
 ﻿using Movieseek.Models;
 using Movieseek.Services;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Movieseek
+namespace Movieseek.Pages.Main
 {
     public partial class Movieseek : Form
     {
         #region constructor
-        public LocalFileService _localFileService;
         public OMDBService _OMDBService;
+        public APIService _APIService;
 
         public Movieseek()
         {
-            _localFileService = new LocalFileService();
             _OMDBService = new OMDBService();
+            _APIService = new APIService();
             InitializeComponent();
             InitializeOMDBDataSource();
             UpdateMyListDataSource();
         }
         #endregion
-
-        private void OnLoadForm(object sender, EventArgs e)
-        {
-        }
 
         private async void buttonBackPage_Click(object sender, EventArgs e)
         {
@@ -70,14 +65,15 @@ namespace Movieseek
         {
             // configure columns
             DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
             dt.Columns.Add("Title");
             dt.Columns.Add("Year");
             dt.Columns.Add("Type");
 
             // read the movies from file
-            foreach (var item in _localFileService.localMovies)
+            foreach (var item in APIService.movies)
             {
-                dt.Rows.Add(item.Title, item.Year, item.Type);
+                dt.Rows.Add(item.ID, item.Title, item.Year, item.Type);
             }
 
             gridMyList.DataSource = dt;
@@ -124,34 +120,33 @@ namespace Movieseek
                 await UpdateOMDBDataSource();
         }
 
-        private void gridOMDB_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private async void gridOMDB_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var selectedMovie = gridOMDB.Rows[e.RowIndex];
             string title = selectedMovie.Cells[0].FormattedValue.ToString();
             string year = selectedMovie.Cells[1].FormattedValue.ToString();
             string type = selectedMovie.Cells[2].FormattedValue.ToString();
 
-            Movie newMovie = new Movie()
-            {
-                Title = title,
-                Year = year,
-                Type = type
-            };
+            // save new movie
+            var savedMovie = await _APIService.AddNewMovie(title, year, type);
 
             // update local file
-            _localFileService.localMovies.Add(newMovie);
-            _localFileService.SaveMoviesFromFile(_localFileService.localMovies);
+            APIService.movies.Add(savedMovie);
 
             // update data table
             UpdateMyListDataSource();
             tabControl.SelectedTab = tabMyList;
         }
 
-        private void gridMyList_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        private async void gridMyList_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
+            var selectedIndex = e.Row.Index;
+            var selectedMovie = gridMyList.Rows[e.Row.Index];
+            string id = selectedMovie.Cells[0].FormattedValue.ToString();
+            await _APIService.RemoveMovie(id);
+
             // update local file
-            _localFileService.localMovies.RemoveAt(e.Row.Index);
-            _localFileService.SaveMoviesFromFile(_localFileService.localMovies);
+            APIService.movies.RemoveAt(selectedIndex);
         }
 
         private void buttonLoadMyList_Click(object sender, EventArgs e)

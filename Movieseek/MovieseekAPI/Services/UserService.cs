@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using MovieseekAPI.Entities;
 using MovieseekAPI.Helpers;
 
@@ -30,7 +31,7 @@ namespace MovieseekAPI.Services
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 return null;
 
-            var user = _context.Users.SingleOrDefault(x => x.Username == username);
+            var user = _context.Users.Include(u => u.Movies).FirstOrDefault(x => x.Username == username);
 
             // check if username exists
             if (user == null)

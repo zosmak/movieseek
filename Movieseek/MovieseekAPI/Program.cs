@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.AspNetCore;
+using System.Diagnostics;
 
 namespace MovieseekAPI
 {
@@ -15,6 +16,12 @@ namespace MovieseekAPI
     {
         public static void Main(string[] args)
         {
+            // get action exceptions
+            AppDomain.CurrentDomain.FirstChanceException += (sender, eventArgs) =>
+            {
+                Debug.WriteLine(eventArgs.Exception.ToString());
+            };
+
             CreateHostBuilder(args).Build().Run();
         }
 

@@ -13,7 +13,5 @@ namespace MovieseekAPI.Entities
         public string Type { get; set; }
 
         public int UserID { get; set; }
-        public User User { get; set; }
-
     }
 }

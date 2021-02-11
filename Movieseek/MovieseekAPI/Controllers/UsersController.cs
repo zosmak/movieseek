@@ -93,21 +93,22 @@ namespace MovieseekAPI.Controllers
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var tokenString = tokenHandler.WriteToken(token);
 
-            // return basic user info and authentication token
+            // return basic user info, movies and authentication token
             return Ok(new
             {
                 ID = user.ID,
                 Username = user.Username,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                Token = tokenString
+                Movies = user.Movies,
+                Token = tokenString,
             });
         }
 
         /// <summary>
         /// Creates a user
         /// </summary>
-        /// <response code="201">Returns the created user</response>
+        /// <response code="200">Returns the created user autenticated</response>
         /// <response code="400">Bad request</response>            
         [AllowAnonymous]
         [HttpPost("register")]
@@ -126,7 +127,12 @@ namespace MovieseekAPI.Controllers
             {
                 // create user
                 _userService.Create(user, model.Password);
-                return Ok();
+                AuthenticateUserModel authModel = new AuthenticateUserModel()
+                {
+                    Username = user.Username,
+                    Password = model.Password
+                };
+                return Authenticate(authModel);
             }
             catch (AppException ex)
             {
@@ -179,7 +185,7 @@ namespace MovieseekAPI.Controllers
         public IActionResult Delete(int id)
         {
             var user = _userService.GetById(id);
-            if(user != null)
+            if (user != null)
             {
                 _userService.Delete(id);
                 return NoContent();

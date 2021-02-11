@@ -1,6 +1,6 @@
 ﻿using Movieseek.Models;
 
-namespace Movieseek
+namespace Movieseek.Pages.Main
 {
     partial class Movieseek
     {
@@ -32,7 +32,6 @@ namespace Movieseek
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabMyList = new System.Windows.Forms.TabPage();
-            this.buttonLoadMyList = new System.Windows.Forms.Button();
             this.gridMyList = new System.Windows.Forms.DataGridView();
             this.tabSearch = new System.Windows.Forms.TabPage();
             this.gridOMDB = new System.Windows.Forms.DataGridView();
@@ -65,7 +64,6 @@ namespace Movieseek
             // 
             // tabMyList
             // 
-            this.tabMyList.Controls.Add(this.buttonLoadMyList);
             this.tabMyList.Controls.Add(this.gridMyList);
             this.tabMyList.Location = new System.Drawing.Point(4, 22);
             this.tabMyList.Name = "tabMyList";
@@ -75,16 +73,6 @@ namespace Movieseek
             this.tabMyList.Text = "My List";
             this.tabMyList.UseVisualStyleBackColor = true;
             // 
-            // buttonLoadMyList
-            // 
-            this.buttonLoadMyList.Location = new System.Drawing.Point(310, 393);
-            this.buttonLoadMyList.Name = "buttonLoadMyList";
-            this.buttonLoadMyList.Size = new System.Drawing.Size(182, 23);
-            this.buttonLoadMyList.TabIndex = 1;
-            this.buttonLoadMyList.Text = "Load my list";
-            this.buttonLoadMyList.UseVisualStyleBackColor = true;
-            this.buttonLoadMyList.Click += new System.EventHandler(this.buttonLoadMyList_Click);
-            // 
             // gridMyList
             // 
             this.gridMyList.AllowUserToAddRows = false;
@@ -93,7 +81,7 @@ namespace Movieseek
             this.gridMyList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridMyList.Location = new System.Drawing.Point(8, 8);
             this.gridMyList.Name = "gridMyList";
-            this.gridMyList.Size = new System.Drawing.Size(776, 379);
+            this.gridMyList.Size = new System.Drawing.Size(776, 408);
             this.gridMyList.TabIndex = 0;
             this.gridMyList.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.gridMyList_UserDeletingRow);
             // 
@@ -238,7 +226,6 @@ namespace Movieseek
             this.Name = "Movieseek";
             this.RightToLeftLayout = true;
             this.Text = "Movieseek";
-            this.Load += new System.EventHandler(this.OnLoadForm);
             this.tabControl.ResumeLayout(false);
             this.tabMyList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridMyList)).EndInit();
@@ -253,7 +240,6 @@ namespace Movieseek
         private System.Windows.Forms.TabPage tabMyList;
         private System.Windows.Forms.TabPage tabSearch;
         private System.Windows.Forms.DataGridView gridMyList;
-        private System.Windows.Forms.Button buttonLoadMyList;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.Label labelPage;

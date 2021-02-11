@@ -1,0 +1,442 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Movieseek API",
+    "description": "Movieseek web requests",
+    "version": "v1"
+  },
+  "paths": {
+    "/Movies": {
+      "get": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "Gets all movies",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "201": {
+            "description": "Returns the movies"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "Creates a movie",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/RegisterMovieModel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "201": {
+            "description": "Returns the created movie"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/Movies/{id}": {
+      "get": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "Get a movie by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the movie"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Movie wasn't found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "Updates a movie",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateMovieModel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the updated movie"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Movie wasn't found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Movies"
+        ],
+        "summary": "Deletes a movie",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "204": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Movie wasn't found"
+          }
+        }
+      }
+    },
+    "/Users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Gets all users",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "201": {
+            "description": "Returns the users"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/Users/{id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get a user by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the user"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "User wasn't found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Updates an user",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateUserModel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the updated user"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Movie wasn't found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Deletes an user",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "204": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "User wasn't found"
+          }
+        }
+      }
+    },
+    "/Users/authenticate": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Authenticate a user",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/AuthenticateUserModel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the user with access token"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/Users/register": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Creates a user",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/RegisterUserModel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the created user autenticated"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "RegisterMovieModel": {
+      "required": [
+        "title",
+        "type",
+        "userID",
+        "year"
+      ],
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "year": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "userID": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "UpdateMovieModel": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "year": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "userID": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "UpdateUserModel": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "AuthenticateUserModel": {
+      "required": [
+        "password",
+        "username"
+      ],
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "RegisterUserModel": {
+      "required": [
+        "firstName",
+        "lastName",
+        "password",
+        "username"
+      ],
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

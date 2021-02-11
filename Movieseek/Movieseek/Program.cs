@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Movieseek.Pages.Auth;
+using Movieseek.Services;
+using System;
 using System.Windows.Forms;
 
 namespace Movieseek
@@ -13,7 +15,13 @@ namespace Movieseek
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Movieseek());
+
+            // api service
+            var APIService = new APIService();
+            APIService.InitializeAPIService();
+
+            // show the login page
+            Application.Run(new Login());
         }
     }
 }
