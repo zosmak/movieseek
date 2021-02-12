@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+  </startup>
+  <appSettings>
+    <!-- OMDBAPI SETTINGS -->
+    <add key="OMDBAPI.Address" value="http://www.omdbapi.com" />
+    <add key="OMDBAPI.Key" value="1d3fd517" />
+    <!-- END -->
+    <!-- DATABASE SETTINGS -->
+    <add key="DATABASE.Path" value="./Database" />
+    <add key="DATABASE.File" value="database.txt" />
+    <!-- END -->
+    <!-- MOVIESEEK API SETTINGS -->
+    <add key="API.Address" value="https://movieseekapi20210211211027.azurewebsites.net" />
+    <!-- END -->
+  </appSettings>
+</configuration>

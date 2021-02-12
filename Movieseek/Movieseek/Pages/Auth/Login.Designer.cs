@@ -141,7 +141,7 @@
             this.Controls.Add(this.RegisterLabel);
             this.Controls.Add(this.LoginLabel);
             this.Name = "Login";
-            this.Text = "Register";
+            this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
