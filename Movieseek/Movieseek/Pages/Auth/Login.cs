@@ -10,12 +10,6 @@ namespace Movieseek.Pages.Auth
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void RegisterLabel_Click(object sender, EventArgs e)
         {
             Hide();

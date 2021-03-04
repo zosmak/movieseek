@@ -145,7 +145,7 @@ namespace Movieseek.Pages.Main
             string id = selectedMovie.Cells[0].FormattedValue.ToString();
             await _APIService.RemoveMovie(id);
 
-            // update local file
+            // update local movie list
             APIService.movies.RemoveAt(selectedIndex);
         }
 
